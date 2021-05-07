@@ -1,0 +1,136 @@
+### TESTES CLIENTE ###
+### CADASTRAR CLIENTE
+POST http://localhost:3000/cliente/cadastrar
+Content-Type: application/json
+
+{
+    "nome": "Diogo Deconto",
+    "cpf": "067.608.778-89",
+    "telefone": "(41) 98787-1234",
+    "endereco": "Rua XV de Novembro, 400"
+}
+
+### LISTAR CLIENTES
+GET http://localhost:3000/cliente/listar
+
+### LISTAR CLIENTE POR ID
+GET http://localhost:3000/cliente/listar/60946e2f2565e71304c143f3
+
+### APAGAR POR ID
+DELETE  http://localhost:3000/cliente/excluir/609471690804d33c746232a5
+
+### ATUALIZAR CLIENTE POR ID
+PUT  http://localhost:3000/cliente/alterar/60946e2f2565e71304c143f3
+Content-Type: application/json
+
+{
+    "nome": "Gabriel Luiz Deina",
+    "cpf": "088.608.778-89",
+    "telefone": "(41) 98783-6688",
+    "endereco": "Rua XV de Novembro, 300"
+}
+### Passar o ID pelo corpo, pois um button não manda params via url
+
+
+
+
+
+### TESTES PARA FUNCIONARIO ###
+### Requisição com sucesso
+POST http://localhost:3000/funcionario/cadastrar
+Content-Type: application/json
+
+{
+    "nome": "Suzie Sabadine",
+    "cpf": "084.553.457-29",
+    "telefone": "(41) 99822-1111",
+    "endereco": "Rua Maria Trevizan Tortato, 234",
+    "funcao": "Auxiliar"
+}
+
+### LISTAR FUNCIONÁRIOS
+GET http://localhost:3000/funcionario/listar
+
+
+
+
+
+### TESTES PARA ANIMAL ###
+### CADASTRAR ANIMAL
+POST  http://localhost:3000/animal/cadastrar
+Content-Type: application/json
+
+{
+    "nome": "Suzie",
+    "tipo": "Cavalo",
+    "cliente":{
+        "_id": "60946e2f2565e71304c143f3"
+    }
+}
+
+### LISTAR ANIMAIS
+GET http://localhost:3000/animal/listar
+
+### ALTERAR ANIMAL
+PUT http://localhost:3000/animal/alterar/609477e4f380f81c5ce70548
+Content-Type: application/json
+
+{
+    "nome": "Suzie",
+    "cliente": "60947751f380f81c5ce70545"
+}
+### CONFIGURAR DEPOIS
+
+
+
+
+
+### TESTES PARA ATENDIMENTO ###
+### Cadastrar ATENDIMENTO
+POST http://localhost:3000/atendimento/cadastrar
+Content-Type: application/json
+
+{
+    "cliente": "60946e2f2565e71304c143f3",
+    "funcionario": "6094725a0804d33c746232a7",
+    "animal": "6094739c0804d33c746232a8",
+    "procedimento": "60946d9fb8dd361614f16a58",
+    "data_agendamento": "05-06-2021"
+}
+
+### Listar ATENDIMENTOS
+GET http://localhost:3000/atendimento/listar
+
+### ALTERAR ATENDIMENTO
+PUT http://localhost:3000/atendimento/alterar/atendimento_id
+Content-Type: application/application/json
+
+{
+    "data_agendamento": "05-06-2021"
+}
+
+
+
+
+
+### TESTES PARA PROCEDIMENTO
+###Cadastrar procedimento
+POST http://localhost:3000/procedimento/cadastrar
+Content-Type: application/json
+
+{
+    "nome": "Tosa",
+    "valor": 25.00
+}
+
+### Listar PROCEDIMENTOS
+GET http://localhost:3000/procedimento/listar
+
+### Atualizar VALOR do PROCEDIMENTO
+PUT http://localhost:3000/procedimento/alterar
+Content-Type: application/json
+
+{
+    "nome": "Tosa",
+    "valor": 30.00
+}
