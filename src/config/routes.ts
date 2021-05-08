@@ -24,7 +24,7 @@ router.post("/funcionario/cadastrar", funcionarioController.cadastrar);
 
 router.get("/animal/listar", animalController.listar);
 router.post("/animal/cadastrar", animalController.cadastrar);
-router.put("/animal/alterar/:animal_id", animalController.alterarPorId);
+router.put("/animal/alterar/:id", animalController.alterarPorId);
 
 router.post("/atendimento/cadastrar", atendimentoController.cadastrar);
 router.get("/atendimento/listar", atendimentoController.listar);

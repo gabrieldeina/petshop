@@ -14,7 +14,7 @@ Content-Type: application/json
 GET http://localhost:3000/cliente/listar
 
 ### LISTAR CLIENTE POR ID
-GET http://localhost:3000/cliente/listar/60946e2f2565e71304c143f3
+GET http://localhost:3000/cliente/listar/60959bf0b3e35721a03d3ac0
 
 ### APAGAR POR ID
 DELETE  http://localhost:3000/cliente/excluir/609471690804d33c746232a5

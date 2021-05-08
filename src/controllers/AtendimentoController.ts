@@ -22,7 +22,12 @@ class AtendimentoController {
 
   async listar(request: Request, response: Response) {
     try {
-      const atendimentos = await AtendimentoSchema.find();
+      const atendimentos = await AtendimentoSchema.find()
+                              .populate("cliente","nome")
+                              .populate("procedimento")
+                              .populate("funcionario","nome")
+                              .populate("animal","nome"); 
+                                
       response.status(200).json({
         data: atendimentos,
         error: false,
